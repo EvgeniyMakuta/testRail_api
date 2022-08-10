@@ -21,3 +21,7 @@ export interface Project {
     show_announcement?: boolean,
     suite_mode?: number,
 }
+
+export const statusCode = {
+    200: 200
+}
