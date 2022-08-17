@@ -4,7 +4,7 @@
   "description": "TestRail Api",
   "main": "index.js",
   "scripts": {
-    "jest:test": "jest"
+    "jest:test": "jest --detectOpenHandles"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,5 @@
 import superagent from "superagent";
-import { header } from "../utils/endpoints";
+import { header } from "../utils/endpointsData";
 
 export async function get(endpoint: string): Promise<any> {
     let res: any;
@@ -20,7 +20,6 @@ export async function post(endpoint: string, body: object): Promise<any> {
             .post(endpoint)
             .set(header)
             .send(body);
-        console.log(`${endpoint.split("_").splice(1, 1)} was created with name '${res.body.name}'`)
     } catch (err: any) {
         console.log(err.message);
     }
@@ -34,7 +33,6 @@ export async function put(endpoint: string, body: object): Promise<any> {
             .post(endpoint)
             .set(header)
             .send(body);
-        console.log(`${endpoint.split("_").splice(1, 1)} was changed with name '${res.body.name}'`)
     } catch (err: any) {
         console.log(err.message);
     }
@@ -47,7 +45,6 @@ export async function remove(endpoint: string): Promise<any> {
         res = await superagent
             .post(endpoint)
             .set(header);
-        console.log(`${endpoint.split("_").splice(1, 1)} was deleted with name '${res.body.name}'`)
     } catch (err: any) {
         console.log(err.message);
     }

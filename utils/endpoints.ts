@@ -1,18 +1,5 @@
-import { MethodAllKey, MethodKey } from "./enums";
-
-const serverAddress = "https://tstms.testrail.io/";
-const path = "index.php?/api/v2";
-const base = `${serverAddress}${path}`;
-
-const contentType = "application/json";
-const authToken = "YXVzbXltb2c0ODVAZ21haWwuY29tOkF1c3RyYWxpYTI0JA==";
-const auth = `Basic ${authToken}`;
-
-export const header =
-    {
-            "Content-Type": contentType,
-            "Authorization": auth,
-    }
+import { MethodAllKey, MethodKey } from "./types";
+import { base } from "./endpointsData";
 
 export const endpoint = {
         getAll: (name: MethodAllKey) => `${base}/get_${name}`,
